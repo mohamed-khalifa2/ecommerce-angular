@@ -1,0 +1,26 @@
+<div class=" contain flex flex-col justify-center items-center mt-[20vh]">
+    <h2 class="font-bold text-2xl mb-2">CREATE ACCOUNT</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4 w-[400px]">
+        <div>
+            <input type="email" formControlName="email" class="border p-2 w-full" placeholder="EMAIL">
+
+            @if (signupForm.get('email')?.invalid && signupForm.get('email')?.touched) {
+            <div class="text-red-500">Enter a valid email.</div>
+            }
+        </div>
+
+        <div>
+            <input type="password" formControlName="password" class="border p-2 w-full" placeholder="Password">
+
+            @if (signupForm.get('password')?.invalid && signupForm.get('password')?.touched) {
+            <div class="text-red-500">Password must be at least 6 characters.</div>
+            }
+        </div>
+
+        <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded w-full cursor-pointer hover:bg-blue-500 ">
+            Login
+        </button>
+    </form>
+    <p>or</p>
+    <div>already logged in? <a href="login" class="text-blue-500">Login</a></div>
+</div>
