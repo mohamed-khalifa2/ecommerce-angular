@@ -30,19 +30,27 @@ export class SliderComponent {
           text-align: center;
           opacity: 0.5;
           background: rgba(0, 0, 0,0.2);
-        }
+          }
   
         .swiper-pagination-bullet-active {
           background: #000;
-        }
+          }
 
         .swiper-button-next, .swiper-button-prev{
+        display: none;
         width: 10px;
         padding:0px 17px;
         color:white;
-        background: rgba(0,0,0,0.8);
-        border-radius:100px
+        background: rgba(0,0,0,0.6);
+        border-radius:100px;
+          }
+        .swiper:hover{
+        .swiper-button-next, .swiper-button-prev {
+        display:block;
+            }
+          }
         }
+        
 
         @media only screen and (max-width: 600px) {
             .swiper-button-next, .swiper-button-prev {
