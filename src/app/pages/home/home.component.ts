@@ -8,8 +8,9 @@ import { SliderComponent } from '../../shared/slider/slider.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  lastY = 0
   @ViewChild('floating') floating!: ElementRef
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
     if (window.scrollY >= 350) { this.floating.nativeElement.classList.add('opacity-100') }
     else {
@@ -18,7 +19,9 @@ export class HomeComponent {
     }
   }
 
+
   onClickFloating() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
   }
 }

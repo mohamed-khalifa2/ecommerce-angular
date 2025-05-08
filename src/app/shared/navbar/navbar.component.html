@@ -1,6 +1,6 @@
-<div class="top-nav bg-gray-200">
+<div class="top-nav bg-gray-200 hidden lg:flex justify-end">
     <div class="items mx-5 text-[14px]">
-        <div class="language flex justify-end  space-x-1.5 text-[14px]">
+        <div class="language flex  space-x-1.5 text-[14px]">
             <a href="" class="hover:text-blue-800">arabic</a>
             <p>|</p>
             <a href="" class="hover:text-blue-800">english</a>
@@ -9,8 +9,8 @@
 
 </div>
 
-<div class="main-nav bg-white flex justify-center shadow-[0px_5px_5px_-5px_rgba(0,0,0,0.3)] ">
-    <div class="items flex py-1.5  items-center justify-between w-[80%]">
+<div class="main-nav bg-white flex justify-center shadow-[0px_2px_3px_0px_rgba(0,0,0,0.3)] ">
+    <div class="items flex py-4 lg:py-1.5  items-center justify-between w-[80%]">
         <div class="logo">
             <a href=" "><img class="h-[30px]"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/LC_Waikiki_logo.svg/2560px-LC_Waikiki_logo.svg.png"
@@ -18,7 +18,7 @@
 
         </div>
 
-        <div class="flex flex-grow max-w-2xl mx-6">
+        <div class="flex-grow max-w-2xl mx-6 hidden lg:flex"> <!--search bar -->
             <input type="text" placeholder="Search items"
                 class="w-full border rounded-l-full py-2 px-4 pl-10 focus:outline-none" />
             <button
@@ -58,7 +58,7 @@
 
 </div>
 
-<div class="main-categories w-[100%] bg-white shadow-[0px_5px_5px_-5px_rgba(0,0,0,0.3)]">
+<div #navbar class="main-categories w-[100%] bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.3)] hidden lg:flex">
     <div class="items flex text-[14px] p-4 space-x-20 ml-6"><a href="" class="hover:text-blue-800">WOMEN</a>
         <a href="" class="hover:text-blue-800">MEN</a>
         <a href="" class="hover:text-blue-800">KIDS</a>

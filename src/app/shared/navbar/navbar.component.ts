@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  lastY = 0
+  @ViewChild('navbar') navbar!: ElementRef
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (window.scrollY > this.lastY) {
+      this.navbar.nativeElement.classList.add('lg:hidden')
+    } else {
+      this.navbar.nativeElement.classList.remove('lg:hidden')
+    }
+    this.lastY = window.scrollY
+  }
 
 }
