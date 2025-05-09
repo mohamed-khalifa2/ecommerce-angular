@@ -19,4 +19,20 @@ export class NavbarComponent {
     this.lastY = window.scrollY
   }
 
+  @ViewChild('side') side!: ElementRef
+  @ViewChild('blur') blur!: ElementRef
+  sideBarToggle() {
+
+    this.side.nativeElement.classList.add('left-[0px]')
+    this.blur.nativeElement.classList.remove('hidden')
+
+
+
+    console.log('clicked')
+  }
+
+  closeSideBar() {
+    this.side.nativeElement.classList.remove('left-[0px]')
+    this.blur.nativeElement.classList.add('hidden')
+  }
 }
