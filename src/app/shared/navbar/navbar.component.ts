@@ -1,38 +1,36 @@
-import { Component, ElementRef, HostListener, ViewChild, viewChild } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   lastY = 0
-  @ViewChild('navbar') navbar!: ElementRef
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
+  currentSideBar = 'left-[-300%]';
+  currentBlur = 'hidden';
+  currentNavbar = ''
+
+  @HostListener('window:scroll')
+  hideNavbar() {
     if (window.scrollY > this.lastY) {
-      this.navbar.nativeElement.classList.add('lg:hidden')
+      this.currentNavbar = 'lg:hidden'
     } else {
-      this.navbar.nativeElement.classList.remove('lg:hidden')
+      this.currentNavbar = ''
     }
     this.lastY = window.scrollY
   }
 
-  @ViewChild('side') side!: ElementRef
-  @ViewChild('blur') blur!: ElementRef
   sideBarToggle() {
-
-    this.side.nativeElement.classList.add('left-[0px]')
-    this.blur.nativeElement.classList.remove('hidden')
-
-
-
-    console.log('clicked')
+    if (this.currentSideBar == 'left-[-300%]' && this.currentBlur == 'hidden') {
+      this.currentSideBar = 'left-[0]';
+      this.currentBlur = '';
+    } else {
+      this.currentSideBar = 'left-[-300%]';
+      this.currentBlur = 'hidden'
+    }
   }
 
-  closeSideBar() {
-    this.side.nativeElement.classList.remove('left-[0px]')
-    this.blur.nativeElement.classList.add('hidden')
-  }
 }

@@ -3,66 +3,9 @@
     <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-4 w-[80%]">
 
         <!-- single card -->
-        <div class="card bg-white shadow hover:scale-103 transition-transform duration-500">
-            <img class="w-full object-cover"
-                src="https://www.ikea.com/eg/en/images/products/pepprig-microfiber-cloth-green-blue-yellow__1267108_pe928383_s5.jpg"
-                alt="">
-            <div class="content px-3">
-                <p class="font-semibold p-1">Name</p>
-                <p class="p-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, velit?</p>
-                <p class="text-blue-700 p-1 font-medium">69.99$</p>
-            </div>
-        </div>
+        <app-card [src]="cardInfo.img" [name]="cardInfo.name" [description]="cardInfo.description"
+            [price]="cardInfo.price">
+        </app-card>
         <!-- end of single card -->
-        <!-- single card -->
-        <div class="card bg-white shadow hover:scale-103 transition-transform duration-500">
-            <img class="w-full object-cover"
-                src="https://www.ikea.com/eg/en/images/products/pepprig-microfiber-cloth-green-blue-yellow__1267108_pe928383_s5.jpg"
-                alt="">
-            <div class="content px-3">
-                <p class="font-semibold p-1">Name</p>
-                <p class="p-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, velit?</p>
-                <p class="text-blue-700 p-1 font-medium">69.99$</p>
-            </div>
-        </div>
-        <!-- end of single card -->
-        <!-- single card -->
-        <div class="card bg-white shadow hover:scale-103 transition-transform duration-500">
-            <img class="w-full object-cover"
-                src="https://www.ikea.com/eg/en/images/products/pepprig-microfiber-cloth-green-blue-yellow__1267108_pe928383_s5.jpg"
-                alt="">
-            <div class="content px-3">
-                <p class="font-semibold p-1">Name</p>
-                <p class="p-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, velit?</p>
-                <p class="text-blue-700 p-1 font-medium">69.99$</p>
-            </div>
-        </div>
-        <!-- end of single card -->
-        <!-- single card -->
-        <div class="card bg-white shadow hover:scale-103 transition-transform duration-500">
-            <img class="w-full object-cover"
-                src="https://www.ikea.com/eg/en/images/products/pepprig-microfiber-cloth-green-blue-yellow__1267108_pe928383_s5.jpg"
-                alt="">
-            <div class="content px-3">
-                <p class="font-semibold p-1">Name</p>
-                <p class="p-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, velit?</p>
-                <p class="text-blue-700 p-1 font-medium">69.99$</p>
-            </div>
-        </div>
-        <!-- end of single card -->
-        <!-- single card -->
-        <div class="card bg-white shadow hover:scale-103 transition-transform duration-500">
-            <img class="w-full object-cover"
-                src="https://www.ikea.com/eg/en/images/products/pepprig-microfiber-cloth-green-blue-yellow__1267108_pe928383_s5.jpg"
-                alt="">
-            <div class="content px-3">
-                <p class="font-semibold p-1">Name</p>
-                <p class="p-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, velit?</p>
-                <p class="text-blue-700 p-1 font-medium">69.99$</p>
-            </div>
-        </div>
-        <!-- end of single card -->
-
-
     </div>
 </div>

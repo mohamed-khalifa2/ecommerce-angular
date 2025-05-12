@@ -111,8 +111,8 @@
 
 <!-- floating button -->
 
-<div class="w-[50px] h-[50px] rounded-full bg-blue-400 fixed bottom-5 right-5 flex items-center justify-center opacity-0 transition-opacity duration-300"
-    (click)='onClickFloating()' #floating>
+<div class="w-[50px] h-[50px] rounded-full bg-blue-400 fixed bottom-5 right-5 flex items-center justify-center transition-opacity duration-300"
+    [ngClass]="currentState" (click)='onClickFloating()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-chevron-up"
         viewBox="0 0 16 16">
         <path fill-rule="evenodd"

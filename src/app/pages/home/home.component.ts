@@ -1,10 +1,11 @@
-import { Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, inject } from '@angular/core';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { GenericHttpService } from '../../services/generic-http.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [SliderComponent],
+  imports: [SliderComponent, NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,15 +17,14 @@ export class HomeComponent {
       error: (err) => { console.log(err) }
     });
   }
-
+  currentState: string = 'opacity-0'
   lastY = 0
-  @ViewChild('floating') floating!: ElementRef
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (window.scrollY >= 350) { this.floating.nativeElement.classList.add('opacity-100') }
+    if (window.scrollY >= 350) { this.currentState = 'opacity-100' }
     else {
-      this.floating.nativeElement.classList.remove('opacity-100')
-      console.log('hiding')
+      this.currentState = 'opacity-0'
+
     }
   }
   onClickFloating() {

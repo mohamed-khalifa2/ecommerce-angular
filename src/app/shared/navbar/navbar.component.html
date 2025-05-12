@@ -1,7 +1,7 @@
 <!-- side bar -->
-
-<div #side class=" z-2008 left-[-300%] fixed w-[90%] shadow bg-white h-screen transition-all duration-700">
-    <button (click)="closeSideBar()" class="absolute right-2 top-2">
+<!-- sidebar body  -->
+<div [ngClass]="currentSideBar" class="z-2008 fixed w-[90%] shadow bg-white h-screen transition-all duration-700">
+    <button (click)="sideBarToggle()" class="absolute right-2 top-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x"
             viewBox="0 0 16 16">
             <path
@@ -30,11 +30,15 @@
         </ul>
     </div>
 </div>
-
-<div #blur class="fixed z-2000 w-[100vw] h-[100vh] bg-gray-900 opacity-20 hidden">
+<!-- blur effect in bg  -->
+<div [ngClass]="currentBlur" class="fixed z-2000 w-[100vw] h-[100vh] bg-gray-900 opacity-20">
 </div>
+<!-- sidebar end -->
 
-<!-- navbar -->
+
+
+<!-- all navbar -->
+<!-- top navbar -->
 <div class="top-nav bg-gray-200 hidden lg:flex justify-end">
     <div class="items mx-5 text-[14px]">
         <div class="language flex  space-x-1.5 text-[14px]">
@@ -46,9 +50,10 @@
 
 </div>
 
+<!-- main navbar  -->
 <div class="main-nav bg-white flex justify-center shadow-[0px_2px_3px_0px_rgba(0,0,0,0.3)] ">
 
-    <div (click)="sideBarToggle()" #collapsee class="mt-5 lg:hidden md:hidden"><svg xmlns="http://www.w3.org/2000/svg"
+    <div (click)="sideBarToggle()" class="mt-5 lg:hidden md:hidden side_icon"><svg xmlns="http://www.w3.org/2000/svg"
             width="30" height="30" fill="black" class="bi bi-justify-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
                 d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
@@ -102,7 +107,9 @@
 
 </div>
 
-<div #navbar class="main-categories w-[100%] bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.3)] hidden lg:flex">
+<!-- down navbar  -->
+<div [ngClass]="currentNavbar"
+    class="main-categories w-[100%] bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.3)] hidden lg:flex">
     <div class="items flex text-[14px] p-4 space-x-20 ml-6"><a href="" class="hover:text-blue-800">WOMEN</a>
         <a href="" class="hover:text-blue-800">MEN</a>
         <a href="" class="hover:text-blue-800">KIDS</a>
@@ -110,3 +117,4 @@
     </div>
 
 </div>
+<!-- all navbar end -->
