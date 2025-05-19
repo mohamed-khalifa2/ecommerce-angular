@@ -2,6 +2,7 @@ import { Component, HostListener, inject } from '@angular/core';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { GenericHttpService } from '../../services/generic-http.service';
 import { NgClass } from '@angular/common';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +12,24 @@ import { NgClass } from '@angular/common';
 })
 export class HomeComponent {
   private http = inject(GenericHttpService);
-  categories = new Set<string>()
-  category_products: any = {}
+  category_products: { [key: string]: Product[] } = {}
 
   ngOnInit() {
     this.http.getProducts().subscribe({
-      next: (res: any) => {
-        res.forEach((product: any) => this.categories.add(product.category))
+      next: (res) => {
+        res.forEach(product => {
+          const category = product.category;
+
+          if (!this.category_products[category]) {
+            this.category_products[category] = [];
+          }
+
+          this.category_products[category].push(product);
+        });
+
+        console.log(this.category_products);
       },
-      error: (err) => { console.log(err) }
+      error: (err) => console.log(err),
     });
   }
 
