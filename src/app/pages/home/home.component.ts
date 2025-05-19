@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { GenericHttpService } from '../../services/generic-http.service';
 import { NgClass } from '@angular/common';
@@ -10,13 +10,23 @@ import { NgClass } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  private api = inject(GenericHttpService);
+  private http = inject(GenericHttpService);
+  categories = new Set<string>()
+  categories_products: any = {}
+
   ngOnInit() {
-    this.api.getProducts().subscribe({
-      next: (res) => { console.log(res) },
+    this.http.getProducts().subscribe({
+      next: (res: any) => {
+        res.map((product: any) => this.categories.add(product.category))
+        this.categories.forEach(category => this.categories_products[category] = res.filter((products: any) => products.category == category))
+        console.log(this.categories_products)
+        console.log(this.categories)
+      },
       error: (err) => { console.log(err) }
     });
   }
+
+
   currentState: string = 'opacity-0'
   lastY = 0
   @HostListener('window:scroll', [])
