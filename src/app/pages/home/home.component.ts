@@ -12,15 +12,12 @@ import { NgClass } from '@angular/common';
 export class HomeComponent {
   private http = inject(GenericHttpService);
   categories = new Set<string>()
-  categories_products: any = {}
+  category_products: any = {}
 
   ngOnInit() {
     this.http.getProducts().subscribe({
       next: (res: any) => {
-        res.map((product: any) => this.categories.add(product.category))
-        this.categories.forEach(category => this.categories_products[category] = res.filter((products: any) => products.category == category))
-        console.log(this.categories_products)
-        console.log(this.categories)
+        res.forEach((product: any) => this.categories.add(product.category))
       },
       error: (err) => { console.log(err) }
     });
