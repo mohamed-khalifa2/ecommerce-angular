@@ -1,15 +1,14 @@
 <!-- header -->
-
-<div class="flex justify-center h-[100vh]">
-    <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-4 mt-[10vh] w-[100%] h-[100%] ">
+<div class="flex justify-center lg:mt-10 mb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-4">
         <!-- Left side-->
-        <div class="lg:col-span-2 h-[80vh] lg:h-[50vh] ">
+        <div class="h-[90vh] lg:h-[50vh] lg:col-span-2">
             <app-slider class="w-full h-full block"></app-slider>
         </div>
 
         <!-- Right side-->
         <div class="h-[50vh] hidden lg:block">
-            <div class="h-full bg-red-600 rounded overflow-hidden">
+            <div class="h-full rounded overflow-hidden">
                 <img class="w-full h-full object-cover"
                     src="https://static.vecteezy.com/system/resources/previews/029/920/721/non_2x/sale-banner-template-design-big-sale-special-offer-stock-illustration-vector.jpg"
                     alt="">
@@ -21,51 +20,50 @@
 
 <!-- categories -->
 
-<div class="flex justify-center gap-6 flex-wrap px-4">
+
+
+<div class="flex justify-center gap-4 lg:gap-15 flex-wrap">
     <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
+        <a [routerLink]="['/categories','men']"
+            class="rounded-full w-[4rem] h-[4rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
             <img class="w-full h-full object-cover"
                 src="https://static.nextdirect.com/resource/blob/956784/9d07251308a9e4769c49a2aedcf7ad4b/mens-hero-mb-data.jpg"
                 alt="men-category">
         </a>
         <p class="font-semibold text-gray-700">MEN</p>
     </div>
+
+
     <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
+        <a [routerLink]="['/categories','women']"
+            class="rounded-full w-[4rem] h-[4rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
             <img class="w-full h-full object-cover"
                 src="https://sustainablykindliving.com/wp-content/uploads/2024/06/sustainably-women-workwear-clothes-819x1024.webp"
-                alt="men-category">
+                alt="wommen-category">
         </a>
         <p class="font-semibold text-gray-700">WOMEN</p>
     </div>
+
+
     <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
+        <a [routerLink]="['/categories','electronics']"
+            class="rounded-full w-[4rem] h-[4rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
             <img class="w-full h-full object-cover"
-                src="https://donsje.com/cdn/shop/files/4083000_00002_2.jpg?v=1742257280&width=1100" alt="men-category">
+                src="https://www.howardselectrical.co.uk/media/mageplaza/blog/post/k/i/kitchen-appliances-history-evolution.jpg"
+                alt="electronics-category">
         </a>
-        <p class="font-semibold text-gray-700">BOYS</p>
+        <p class="font-semibold text-gray-700">ELECTRONICS</p>
     </div>
+
+
     <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
+        <a [routerLink]="['/categories','jewelery']"
+            class="rounded-full w-[4rem] h-[4rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
             <img class="w-full h-full object-cover"
-                src="https://cdn.shopify.com/s/files/1/3011/2106/files/NAME-IT_SpringSummer2025_4671221_13238948_3_400x.jpg?v=1736872279"
-                alt="men-category">
+                src="https://poetrydesigns.com/cdn/shop/products/2022-11-0411.02.03.jpg?v=1668200102&width=1946"
+                alt="jewelry-category">
         </a>
-        <p class="font-semibold text-gray-700">GIRLS</p>
-    </div>
-    <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
-            <img class="w-full h-full object-cover"
-                src="https://cdn.shopify.com/s/files/1/0004/0245/6582/files/baby_mobile_hero.jpg" alt="men-category">
-        </a>
-        <p class="font-semibold text-gray-700">BABIES</p>
-    </div>
-    <div class="item flex flex-col items-center">
-        <a href="#" class="rounded-full w-[6rem] h-[6rem] lg:w-[10rem] lg:h-[10rem] overflow-hidden">
-            <img class="w-full h-full object-cover"
-                src="https://cdn.shopify.com/s/files/1/0004/0245/6582/files/baby_mobile_hero.jpg" alt="men-category">
-        </a>
-        <p class="font-semibold text-gray-700">BABIES</p>
+        <p class="font-semibold text-gray-700">JEWELERY</p>
     </div>
 
 
@@ -75,37 +73,78 @@
 
 <!-- discover now -->
 
-<div class="banner h-[100vh] mt-10 mb-10 relative">
-    <img class="w-full h-full absolute top-0 left-0 object-cover"
-        src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/egen-0525-large2.jpg" alt="">
-</div>
-<div class="banner h-[100vh] mt-10 mb-10 relative">
-    <img class="w-full h-full absolute top-0 left-0 object-cover"
-        src="https://img-lcwaikiki.mncdn.com/Resource/Images/Banner/egen-0525-large4.jpg" alt="">
-</div>
-
-
-<!-- services -->
-<div class="flex flex-row justify-center items-center p-25 gap-8">
-    <div
-        class="shipping bg-blue-100 h-[100px] min-w-[150px] lg:h-[200px] lg:min-w-[300px] rounded-[10px] flex flex-col justify-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-truck lg:p-6 p-2" viewBox="0 0 16 16">
-            <path
-                d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
-        </svg>
-        <p class="font-bold lg:text-2xl lg:p-3">Free shipping</p>
+<div class="illustrations mt-40 mb-40 flex flex-col justify-center items-center">
+    <div class="section lg:flex justify-center  items-center gap-10 w-[70%]  mt-15 mb-15">
+        <img class=" w-full lg:w-[40%]" src="illustration_1.svg" alt="">
+        <div class="desc">
+            <h4>MAIN TITLE</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perferendis expedita
+                aperiam
+                eum iure porro
+                commodi ratione doloremque quae consectetur! Officiis, et ea nihil illum accusamus magni debitis cum
+                veritatis eveniet quos. Eveniet, quisquam blanditiis. Dolorum non, quasi voluptas voluptatibus sit alias
+                dolor quo quibusdam commodi delectus officiis, aut officia aperiam. Dolor, accusamus nam adipisci
+                pariatur fugiat officiis optio rerum ex facere ut cupiditate incidunt iste! Perferendis culpa rem
+                voluptatum porro commodi, maiores quaerat nisi. Numquam magni ipsum adipisci earum ab molestiae animi
+                delectus sed quas harum alias excepturi iste voluptatibus ducimus cupiditate totam aliquam modi corporis
+                enim, necessitatibus deleniti.</p>
+        </div>
     </div>
 
-    <div
-        class="shipping bg-blue-100 h-[100px] min-w-[150px] lg:h-[200px] lg:min-w-[300px] rounded-[10px] flex flex-col justify-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-wallet2 p-2 lg:p-6"
-            viewBox="0 0 16 16">
-            <path
-                d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z" />
-        </svg>
-        <p class="font-bold lg:text-2xl lg:p-3">Cash on delivery</p>
-    </div>
 
+    <div class="section lg:flex flex-row-reverse justify-evenly items-center gap-10 w-[70%] mt-15 mb-15">
+        <img class=" w-full lg:w-[40%]" src="illustration_2.svg" alt="">
+        <div class="desc">
+            <h4>MAIN TITLE</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut perferendis expedita aperiam
+                eum iure porro
+                commodi ratione doloremque quae consectetur! Officiis, et ea nihil illum accusamus magni debitis cum
+                veritatis eveniet quos. Eveniet, quisquam blanditiis. Dolorum non, quasi voluptas voluptatibus sit alias
+                dolor quo quibusdam commodi delectus officiis, aut officia aperiam. Dolor, accusamus nam adipisci
+                pariatur fugiat officiis optio rerum ex facere ut cupiditate incidunt iste! Perferendis culpa rem.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- FAQ SECTION  -->
+
+
+<div class="max-w-2xl mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">FAQ</h2>
+
+    <div class="space-y-4">
+
+        @for (faq of faqs; track $index) {
+        <section class="group border border-gray-200 rounded-lg p-4">
+            <div class="question">
+                <p class="cursor-pointer font-medium text-lg text-gray-800 flex justify-between items-center"
+                    (click)="toggleFAQ($index)">
+                    {{ faq.question }}
+                    <span class="transition-transform duration-300"
+                        [ngClass]="{ 'rotate-180': activeIndex === $index }">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-caret-down" viewBox="0 0 16 16">
+                            <path
+                                d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
+
+            <div class="answer max-h-0 overflow-hidden transition-all duration-300"
+                [ngClass]="{ 'max-h-[300px]': activeIndex === $index }">
+                <p class="mt-2 text-gray-600">
+                    {{ faq.answer }}
+                </p>
+            </div>
+        </section>
+        }
+
+
+    </div>
 </div>
 
 

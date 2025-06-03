@@ -9,6 +9,5 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   @Input() src!: string
   @Input() name!: string
-  @Input() description!: string
   @Input() price!: string
 }

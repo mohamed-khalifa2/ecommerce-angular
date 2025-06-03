@@ -1,11 +1,13 @@
-<div class="flex flex-col items-center justify-center py-10">
-    <h2 class="py-10">Men</h2>
+<div class="flex flex-col items-center justify-center">
+    <h2 class="py-10 font-bold text-3xl">{{param}}</h2>
     <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-4 w-[80%]">
 
         <!-- single card -->
-        <app-card [src]="cardInfo.img" [name]="cardInfo.name" [description]="cardInfo.description"
-            [price]="cardInfo.price">
+        @for (product of products; track $index) {
+        <app-card [src]="product.image" [name]="product.title" [price]="product.price">
         </app-card>
+        }
+
         <!-- end of single card -->
     </div>
 </div>
