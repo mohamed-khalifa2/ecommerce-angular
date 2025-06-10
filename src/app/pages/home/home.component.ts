@@ -2,7 +2,6 @@ import { Component, HostListener, inject } from '@angular/core';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { GenericHttpService } from '../../services/generic-http.service';
 import { NgClass } from '@angular/common';
-import { Product } from '../../interfaces/product';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -13,23 +12,12 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent {
   private http = inject(GenericHttpService);
-  category_products: { [key: string]: Product[] } = {}
   isActiveFaq = false
 
   ngOnInit() {
-    this.http.getProducts().subscribe({
+    this.http.getAllProducts().subscribe({
       next: (res) => {
-        res.forEach(product => {
-          const category = product.category;
-
-          if (!this.category_products[category]) {
-            this.category_products[category] = [];
-          }
-
-          this.category_products[category].push(product);
-        });
-
-        console.log(this.category_products);
+        console.log(res)
       },
       error: (err) => console.log(err),
     });

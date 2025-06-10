@@ -15,15 +15,9 @@ export class CategoryComponent {
   products: any = []
   param = this.route.snapshot.paramMap.get('sub')
   ngOnInit() {
-    this.http.getProducts().subscribe({
-      next: (products) => {
-
-
-        if (this.param == 'men') this.products = products.filter((product) => product.category == "men's clothing")
-        else if (this.param == 'women') this.products = products.filter((product) => product.category == "women's clothing")
-        else this.products = products.filter((product) => product.category == this.param)
-
-        console.log('products are', this.products)
+    this.http.getCategoryProducts('mobile').subscribe({
+      next: (cat) => {
+        console.log('categories are', cat.products)
       },
       error: (err) => console.log(err)
     })

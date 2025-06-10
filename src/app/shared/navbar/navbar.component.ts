@@ -10,7 +10,7 @@ import { NgClass } from '@angular/common';
 export class NavbarComponent {
   lastY = 0
   currentSideBar = 'left-[-300%]';
-  currentBlur = 'hidden';
+  currentBlur = 'invisible';
   currentNavbar = ''
 
   @HostListener('window:scroll')
@@ -24,12 +24,12 @@ export class NavbarComponent {
   }
 
   sideBarToggle() {
-    if (this.currentSideBar == 'left-[-300%]' && this.currentBlur == 'hidden') {
+    if (this.currentSideBar == 'left-[-300%]' && this.currentBlur == 'invisible') {
       this.currentSideBar = 'left-[0]';
-      this.currentBlur = '';
+      this.currentBlur = 'visible';
     } else {
       this.currentSideBar = 'left-[-300%]';
-      this.currentBlur = 'hidden'
+      this.currentBlur = 'invisible'
     }
   }
 
