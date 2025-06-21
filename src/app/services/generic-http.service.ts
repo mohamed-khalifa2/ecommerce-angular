@@ -19,10 +19,10 @@ export class GenericHttpService {
   }
 
   getAllCategories(): Observable<Categories> {
-    return this.http.get<Categories>(this.baseUrl + 'products/category')
+    return this.http.get<Categories>(this.baseUrl + 'products/categories')
   }
 
   getCategoryProducts(category: string): Observable<Products> {
-    return this.http.get<Products>(this.baseUrl + `products/category?type=${category}`)
+    return this.http.get<Products>(this.baseUrl + `products/category/${category}`)
   }
 }
