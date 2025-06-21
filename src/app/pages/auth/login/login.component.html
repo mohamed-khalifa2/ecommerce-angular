@@ -2,11 +2,7 @@
     <h2 class="font-bold text-2xl mb-2">MEMBER LOGIN</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4 w-[400px]">
         <div>
-            <input type="email" formControlName="email" class="border p-2 w-full" placeholder="EMAIL">
-
-            @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
-            <div class="text-red-500">Enter a valid email.</div>
-            }
+            <input type="text" formControlName="username" class="border p-2 w-full" placeholder="USERNAME">
         </div>
 
         <div>

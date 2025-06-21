@@ -1,4 +1,4 @@
-export interface userView {
+export interface user {
     address: Address
     id: number
     email: string

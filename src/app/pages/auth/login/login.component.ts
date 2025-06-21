@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +11,24 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authHttp: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: '',
       password: ['', [Validators.required, Validators.minLength(6)]],
     })
   }
 
   onSubmit() {
+
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      const user = this.loginForm.value
+      this.authHttp.userLogin(user).subscribe({
+        next: (res: any) => {
+          sessionStorage.setItem("token", res.token);
+          this.router.navigate(['/']);
+        }, error: (err) => { console.log(err) }
+      })
+
     }
   }
 }

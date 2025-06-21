@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs';
-import { userView } from '../interfaces/user';
+import { user } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(id: string): Observable<userView> {
-    return this.http.get<userView>(environment.baseUrl + `users/${id}`)
+  userLogin(user: { username: string, password: string }) {
+    return this.http.post(environment.baseUrl + `auth/login`, user)
   }
 
   createUser(user: {
