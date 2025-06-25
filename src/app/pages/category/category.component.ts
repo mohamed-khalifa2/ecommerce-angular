@@ -3,6 +3,7 @@ import { CardComponent } from '../../shared/card/card.component';
 import { GenericHttpService } from '../../services/generic-http.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-category',
   imports: [CardComponent],
@@ -12,12 +13,19 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryComponent {
   private http = inject(GenericHttpService)
   private route = inject(ActivatedRoute)
-  products: any = []
+  categoryProducts: any = []
   param = this.route.snapshot.paramMap.get('sub')
+  message: string = ''
   ngOnInit() {
-    this.http.getCategoryProducts('mobile').subscribe({
+    this.http.getCategoryProducts(this.param).subscribe({
       next: (cat) => {
-        console.log('categories are', cat.products)
+        console.log(cat)
+        if (cat.length == 0) {
+          this.message = `sorry no products for ${this.param}!`
+        }
+        else { this.message = String(this.param) }
+
+        this.categoryProducts = [...cat]
       },
       error: (err) => console.log(err)
     })

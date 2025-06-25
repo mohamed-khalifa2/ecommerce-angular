@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product, Products } from '../interfaces/product';
+import { Product } from '../interfaces/product';
 import { environment } from '../../environments/environment.development';
-import { Categories } from '../interfaces/categories';
+
 
 
 @Injectable({
@@ -14,15 +14,15 @@ export class GenericHttpService {
   constructor(private http: HttpClient) { }
   baseUrl: string = environment.baseUrl
 
-  getAllProducts(): Observable<Products> {
-    return this.http.get<Products>(this.baseUrl + 'products')
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl + 'products')
   }
 
-  getAllCategories(): Observable<Categories> {
-    return this.http.get<Categories>(this.baseUrl + 'products/categories')
+  getAllCategories(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + 'products/categories')
   }
 
-  getCategoryProducts(category: string): Observable<Products> {
-    return this.http.get<Products>(this.baseUrl + `products/category/${category}`)
+  getCategoryProducts(category: string | null): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl + `products/category/${category}`)
   }
 }
